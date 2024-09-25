@@ -12,11 +12,11 @@ import static app.constants.SEA_LEVEL;
 
 public class Ocean {
   NiSpace fenetre = new NiSpace("Exercice 1", new Dimension(400, 400));
-  MovableObject satellite = new Satellite(fenetre, 50, 1);
-  MovableObject satellite2 = new Satellite(fenetre, 20, 160, 0);
-  Buoy buoyVertical = new Buoy(fenetre, 185, 90, 1);
-  Buoy buoyHorizontal = new Buoy(fenetre, 120, 20, 1);
-  Buoy buoySinusoidal = new Buoy(fenetre, 160, 15, 1);
+  Satellite satellite = new Satellite(fenetre, 50, 1);
+  Satellite satellite2 = new Satellite(fenetre, 20, 160, 0);
+//  Buoy buoyVertical = new Buoy(fenetre, 185, 90, 1);
+  Buoy buoyHorizontal = new Buoy(fenetre, 120, 150, 1);
+//  Buoy buoySinusoidal = new Buoy(fenetre, 160, 15, 1);
   NiRectangle ciel = new NiRectangle();
 
   public Ocean() {
@@ -24,23 +24,37 @@ public class Ocean {
     ciel.setBackground(Color.white);
     ciel.setSize(400, SEA_LEVEL);
 
-    buoyHorizontal.movementStrategy = new HorizontalMovement(50);
-    buoySinusoidal.movementStrategy = new SinusoidalMovement(50);
+    buoyHorizontal.movementStrategy = new HorizontalMovement(200);
+//    buoySinusoidal.movementStrategy = new SinusoidalMovement(50);
+
+    // Ajouter les bouées comme observateurs des satellites
+//    satellite.addObserver(buoyVertical);
+    satellite.addObserver(buoyHorizontal);
+//    satellite2.addObserver(buoySinusoidal);
 
     fenetre.add(ciel);
     fenetre.openInWindow();
 
+    // Animation de base avec mouvement continu
     int delay = 1; // milliseconds
     ActionListener taskPerformer = evt -> {
       satellite.move();
       satellite2.move();
-      buoyVertical.move();
+//      buoyVertical.move();
       buoyHorizontal.move();
-      buoySinusoidal.move();
+//      buoySinusoidal.move();
     };
     Timer animation = new Timer(delay, taskPerformer);
     animation.setRepeats(true);
     animation.start();
+
+    // Synchronisation toutes les 5 secondes
+    Timer synchronizationTimer = new Timer(5000, evt -> {
+      satellite.startSynchronization();
+      satellite2.startSynchronization();
+    });
+    synchronizationTimer.setRepeats(true);
+    synchronizationTimer.start();
   }
 
   public static void main(String[] args) {

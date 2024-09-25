@@ -27,6 +27,6 @@ public class VerticalMovement implements MovementStrategy {
     // Applique le mouvement vertical
     loc.translate(0, buoy.speed);
 
-    buoy.setLocation(loc);
+    buoy.setMovableObjectLocation(loc);
   }
 }

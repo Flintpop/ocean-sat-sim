@@ -28,6 +28,6 @@ public class SinusoidalMovement implements MovementStrategy {
       loc.x = 0;
     }
 
-    buoy.setLocation(loc);
+    buoy.setMovableObjectLocation(loc);
   }
 }

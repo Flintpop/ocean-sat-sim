@@ -25,6 +25,6 @@ public class HorizontalMovement implements MovementStrategy {
     // Applique le mouvement horizontal
     loc.translate(buoy.speed, 0);
 
-    buoy.setLocation(loc);
+    buoy.setMovableObjectLocation(loc);
   }
 }
