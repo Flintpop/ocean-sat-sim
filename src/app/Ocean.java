@@ -15,7 +15,7 @@ public class Ocean {
   Satellite satellite = new Satellite(fenetre, 50, 1);
   Satellite satellite2 = new Satellite(fenetre, 20, 160, 0);
 //  Buoy buoyVertical = new Buoy(fenetre, 185, 90, 1);
-  Buoy buoyHorizontal = new Buoy(fenetre, 120, 150, 1);
+  Buoy buoyHorizontal = new Buoy(fenetre, 120, 150, 1, satellite);
 //  Buoy buoySinusoidal = new Buoy(fenetre, 160, 15, 1);
   NiRectangle ciel = new NiRectangle();
 

@@ -14,18 +14,23 @@ public class Buoy extends MovableObject implements Observer {
   private BuoyState state;
   private boolean isSynchronizing = false; // Variable pour vérifier la synchronisation
   private long syncStartTime = 0; // Temps de début de la synchronisation
+  private long collectStartTime = 0; // Temps de début de la collecte
   private int syncStep = 0;  // Variable pour gérer les étapes de synchronisation
 
   private boolean syncRequested = false; // Indicateur pour une synchro en attente
   private List<NiEllipse> circles = new ArrayList<>(); // Liste pour stocker les cercles
 
+  private Satellite satellite;  // Référence au satellite pour obtenir sa position
+
   public enum BuoyState {
     COLLECTING,
     SURFACING,
-    SYNCHRONIZING
+    WAITING_FOR_SYNC,
+    SYNCHRONIZING,
+    DIVING
   }
 
-  public Buoy(NiSpace fenetre, int altitude, int startingPosition, int speed) {
+  public Buoy(NiSpace fenetre, int altitude, int startingPosition, int speed, Satellite satellite) {
     super(fenetre, altitude + SEA_LEVEL, startingPosition, speed);
     if (altitude < 0) {
       throw new IllegalArgumentException("Buoy altitude must be positive");
@@ -33,6 +38,7 @@ public class Buoy extends MovableObject implements Observer {
     if (startingPosition < 0) {
       throw new IllegalArgumentException("Buoy starting position must be positive");
     }
+    this.satellite = satellite;  // Assigner le satellite
     this.setBackground(Color.yellow);
     this.setSize(15, 15);
     this.state = BuoyState.COLLECTING;
@@ -41,38 +47,54 @@ public class Buoy extends MovableObject implements Observer {
     if (altitude > SEA_LEVEL - this.getHeight()) {
       throw new IllegalArgumentException("Buoy altitude must be less than sea level");
     }
+
+    this.collectStartTime = System.currentTimeMillis(); // Démarrer le temps de collecte
   }
 
   @Override
   public void move() {
-    // Vérification de l'état de synchronisation
-    if (isSynchronizing) {
-      // On gère les cercles d'onde pendant la synchronisation
-      long currentTime = System.currentTimeMillis();
-      if (currentTime - syncStartTime >= 1000) {
-        // Après 1 seconde, on arrête la synchronisation et on supprime les cercles
-        isSynchronizing = false;
-        removeCircles();  // Effacer les cercles
-        state = BuoyState.COLLECTING;
-      } else {
-        // On crée et affiche les cercles
-        int syncStepDuration = 250; // Chaque étape dure 250ms
-        syncStep = (int) ((currentTime - syncStartTime) / syncStepDuration);
-        addCircle(loc.x, loc.y, syncStep * 70); // Ajouter un nouveau cercle
-      }
-      return;
-    }
+    long currentTime = System.currentTimeMillis();
 
-    // Sinon, continuer avec les mouvements normaux
     switch (state) {
       case COLLECTING:
-        movementStrategy.move(this);
+        // La bouée collecte pendant 5 secondes, puis passe en mode SURFACING
+        if (currentTime - collectStartTime >= 5000) {
+          state = BuoyState.SURFACING;
+        } else {
+          movementStrategy.move(this);  // Continuer à bouger pendant la collecte
+        }
         break;
+
       case SURFACING:
         surfaceMovement();
         break;
+
+      case WAITING_FOR_SYNC:
+        // La bouée attend qu'un satellite soit au même X qu'elle
+        if (Math.abs(satellite.getX() - loc.x) < 20) {  // Si proche du satellite en X
+          startSynchronization();  // Commencer la synchronisation
+        }
+        break;
+
       case SYNCHRONIZING:
-        // Ne rien faire, on gère la synchro via le timer
+        // Gérer la synchronisation avec les cercles
+        if (isSynchronizing) {
+          if (currentTime - syncStartTime >= 1000) {
+            // Après 1 seconde, arrêter la synchronisation et redescendre
+            isSynchronizing = false;
+            removeCircles();
+            state = BuoyState.DIVING;  // Passer en mode DIVING
+          } else {
+            int syncStepDuration = 250; // Chaque étape dure 250ms
+            syncStep = (int) ((currentTime - syncStartTime) / syncStepDuration);
+            addCircle(loc.x, loc.y, syncStep * 70); // Ajouter un nouveau cercle
+          }
+        }
+        break;
+
+      case DIVING:
+        // La bouée redescend à son altitude d'origine
+        diveMovement();
         break;
     }
   }
@@ -80,14 +102,9 @@ public class Buoy extends MovableObject implements Observer {
   @Override
   public void update(String event) {
     if ("SYNCHRONIZING".equals(event)) {
-      // Si une synchronisation est demandée, vérifier si la bouée est déjà à la surface
-      if (state == BuoyState.SURFACING || loc.y > 200) {
-        // Si la bouée est en train de remonter ou n'est pas encore à la surface
-        syncRequested = true; // Marquer que la synchronisation est demandée après surface
-        state = BuoyState.SURFACING;
-      } else {
-        // Si elle est déjà à la surface, commencer la synchronisation
-        startSynchronization();
+      // Si la synchronisation est demandée, vérifier la position du satellite
+      if (state == BuoyState.WAITING_FOR_SYNC && Math.abs(satellite.getX() - loc.x) < 20) {
+        startSynchronization(); // Si déjà à la surface et proche du satellite
       }
     }
   }
@@ -100,13 +117,20 @@ public class Buoy extends MovableObject implements Observer {
       this.setMovableObjectLocation(locTranslate);
       this.loc = locTranslate;
     } else {
-      // Une fois à la surface, vérifier si une synchronisation est demandée
-      if (syncRequested) {
-        syncRequested = false; // Réinitialiser l'indicateur de synchronisation
-        startSynchronization();
-      } else {
-        state = BuoyState.COLLECTING; // Revenir à l'état de collecte si pas de synchronisation
-      }
+      state = BuoyState.WAITING_FOR_SYNC;  // Une fois à la surface, attendre la synchro
+    }
+  }
+
+  private void diveMovement() {
+    // Redescendre la bouée à son altitude initiale
+    if (getLocation().y < this.altitude) {
+      Point locTranslate = this.getLocation();
+      locTranslate.translate(0, Math.abs(speed));  // Bouger vers le bas
+      this.setMovableObjectLocation(locTranslate);
+      this.loc = locTranslate;
+    } else {
+      state = BuoyState.COLLECTING;  // Revenir en mode collecte
+      collectStartTime = System.currentTimeMillis();  // Redémarrer le timer de collecte
     }
   }
 
@@ -114,6 +138,7 @@ public class Buoy extends MovableObject implements Observer {
     syncStep = 0;
     isSynchronizing = true;  // Marquer l'état de synchronisation
     syncStartTime = System.currentTimeMillis();  // Enregistrer le temps de départ
+    state = BuoyState.SYNCHRONIZING;  // Passer en mode SYNCHRONIZING
   }
 
   // Méthode pour ajouter un cercle (NiEllipse) à la fenêtre
