@@ -3,8 +3,10 @@ package app;
 import nicellipse.component.NiSpace;
 import java.awt.*;
 
+import static app.constants.SEA_LEVEL;
+
 public class Buoy extends MovableObject {
-  private final MovementStrategy movementStrategy;
+  public MovementStrategy movementStrategy;
   private BuoyState state;
 
   public enum BuoyState {
@@ -14,11 +16,21 @@ public class Buoy extends MovableObject {
   }
 
   public Buoy(NiSpace fenetre, int altitude, int startingPosition, int speed) {
-    super(fenetre, altitude, startingPosition, speed);
+    super(fenetre, altitude + SEA_LEVEL, startingPosition, speed);
+    if (altitude < 0) {
+      throw new IllegalArgumentException("Buoy altitude must be positive");
+    }
+    if (startingPosition < 0) {
+      throw new IllegalArgumentException("Buoy starting position must be positive");
+    }
     this.setBackground(Color.yellow);
     this.setSize(15, 15);
     this.state = BuoyState.COLLECTING;
-    this.movementStrategy = new SinusoidalMovement(); // Default strategy
+    this.movementStrategy = new VerticalMovement(50); // Default strategy
+
+    if (altitude > SEA_LEVEL - this.getHeight()) {
+      throw new IllegalArgumentException("Buoy altitude must be less than sea level");
+    }
   }
 
   @Override
@@ -44,4 +56,5 @@ public class Buoy extends MovableObject {
       state = BuoyState.SYNCHRONIZING;
     }
   }
+
 }
