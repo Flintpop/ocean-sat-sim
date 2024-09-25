@@ -2,7 +2,6 @@ package app;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
@@ -13,6 +12,7 @@ public class Ocean {
   NiSpace fenetre = new NiSpace("Exercice 1", new Dimension(400, 400));
   MovableObject satellite = new Satellite(fenetre, 50, 1);
   MovableObject satellite2 = new Satellite(fenetre, 20, 160, 0);
+  Buoy buoy = new Buoy(fenetre, 300, 0, 1);
   NiRectangle ciel = new NiRectangle();
 
   public Ocean() {
@@ -24,11 +24,10 @@ public class Ocean {
     fenetre.openInWindow();
 
     int delay = 1; // milliseconds
-    ActionListener taskPerformer = new ActionListener() {
-      public void actionPerformed(ActionEvent evt) {
-        satellite.move();
-        satellite2.move();
-      }
+    ActionListener taskPerformer = evt -> {
+      satellite.move();
+      satellite2.move();
+      buoy.move();
     };
     Timer animation = new Timer(delay, taskPerformer);
     animation.setRepeats(true);
@@ -38,6 +37,4 @@ public class Ocean {
   public static void main(String[] args) {
     new Ocean();
   }
-
 }
-
