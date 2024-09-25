@@ -11,24 +11,28 @@ import nicellipse.component.NiRectangle;
 import nicellipse.component.NiSpace;
 
 public class Exercice1V2 {
-	NiSpace space = new NiSpace("Exercice 1", new Dimension(200, 150));
-	NiRectangle robi = new NiRectangle();
-	
-	public Exercice1V2() {
-		space.setBackground(Color.lightGray);
-		robi.setBackground(Color.red);
-		robi.setSize(20, 20);
-		space.add(robi);
+	NiSpace fenetre = new NiSpace("Exercice 1", new Dimension(400, 400));
+	NiRectangle satellite = new NiRectangle();
+	NiRectangle ciel = new NiRectangle();
 
-		space.openInWindow();
+	public Exercice1V2() {
+		fenetre.setBackground(Color.blue);
+		ciel.setBackground(Color.white);
+		ciel.setSize(400, 200);
+		satellite.setBackground(Color.gray);
+		satellite.setSize(20, 20);
+		fenetre.add(satellite);
+		fenetre.add(ciel);
+
+		fenetre.openInWindow();
 		
 		int delay = 1; // milliseconds
 		ActionListener taskPerformer = new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
-				Point loc = robi.getLocation();
-				if (loc.y == 0 && loc.x < space.getWidth() - robi.getWidth()) {
+				Point loc = satellite.getLocation();
+				if (loc.y == 0 && loc.x < fenetre.getWidth() - satellite.getWidth()) {
 					loc.translate(1,0);
-				} else if (loc.x > 0 && loc.y < space.getHeight() - robi.getHeight()) {
+				} else if (loc.x > 0 && loc.y < fenetre.getHeight() - satellite.getHeight()) {
 					loc.translate(0,1);
 				} else if (loc.x > 0) {
 					loc.translate(-1,0);
@@ -36,9 +40,9 @@ public class Exercice1V2 {
 					loc.translate(0,-1);
 				}
 				if (loc.x == 0 && loc.y == 0) {
-					robi.setBackground(new Color((int)(Math.random() * 0x1000000)));
+					satellite.setBackground(new Color((int)(Math.random() * 0x1000000)));
 				}
-				robi.setLocation(loc);
+				satellite.setLocation(loc);
 			}
 		};
 		Timer animation = new Timer(delay, taskPerformer);
