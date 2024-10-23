@@ -1,21 +1,21 @@
-package app;
+package appOld;
 
 import nicellipse.component.NiEllipse;
 import nicellipse.component.NiSpace;
 
 import java.awt.*;
 
-public abstract class MovableObject extends NiEllipse {
-  Point loc;
-  int speed;
-  final int altitude;
-  final int startingPosition;
-  NiSpace fenetre;
+public abstract class MovableEllipse extends NiEllipse {
+  public Point loc;
+  public int speed;
+  public final int altitude;
+  public final int startingPosition;
+  public NiSpace fenetre;
 
-  public MovableObject(NiSpace fenetre, int altitude, int startingPosition, int speed) {
+  public MovableEllipse(NiSpace fenetre, int altitude, int startingPosition, int speed) {
     super();
     this.fenetre = fenetre;
-    loc = new Point(startingPosition, altitude);  // On utilise cette position initiale une seule fois
+    loc = new Point(startingPosition, altitude);
     this.altitude = altitude;
     this.startingPosition = startingPosition;
     this.fenetre.add(this);
@@ -23,7 +23,7 @@ public abstract class MovableObject extends NiEllipse {
     this.setMovableObjectLocation(loc);
   }
 
-  void move() {
+  protected void move() {
     if (loc.x < fenetre.getWidth() - this.getWidth()) {
       loc.translate(this.speed, 0);
     } else if (loc.x > 0) {
@@ -32,7 +32,7 @@ public abstract class MovableObject extends NiEllipse {
     this.setMovableObjectLocation(loc);
   }
   
-  void setMovableObjectLocation(Point loc) {
+  public void setMovableObjectLocation(Point loc) {
     this.loc = loc;
     this.setLocation(loc);
   }

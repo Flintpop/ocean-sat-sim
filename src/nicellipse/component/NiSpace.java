@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 public class NiSpace extends JPanel implements NiBasicComponent {
 	private static final long serialVersionUID = -7681440479994731039L;
 	private String name;
+	public JFrame jframe;
 	
 	
 	public Color defaultBackground() {
@@ -36,6 +37,7 @@ public class NiSpace extends JPanel implements NiBasicComponent {
 		frame.getContentPane().add(this);
 		frame.pack();
 		frame.setVisible(true);
+		this.jframe = frame;
 		requestFocus();
 	}
 

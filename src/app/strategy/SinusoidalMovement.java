@@ -1,4 +1,6 @@
-package app;
+package app.strategy;
+
+import app.model.BuoyModel;
 
 import java.awt.*;
 
@@ -11,23 +13,23 @@ public class SinusoidalMovement implements MovementStrategy {
   }
 
   @Override
-  public void move(Buoy buoy) {
-    Point loc = buoy.getLocation();
+  public void move(BuoyModel buoyModel) {
+    Point loc = buoyModel.getLocation();
 
     // Déplacement horizontal
-    loc.x += buoy.speed;
+    loc.x += buoyModel.speed;
 
     // Mouvement vertical sinusoïdal basé sur l'angle
-    loc.y = (int) (buoy.altitude + Math.sin(angle) * ((double) amplitude / 2));
+    loc.y = (int) (buoyModel.altitude + Math.sin(angle) * ((double) amplitude / 2));
 
     // Incrément de l'angle pour le prochain mouvement
     angle += 0.1;
 
     // Si la bouée dépasse la largeur de la fenêtre, elle revient au début
-    if (loc.x > buoy.fenetre.getWidth()) {
+    if (loc.x > buoyModel.fenetre.getWidth()) {
       loc.x = 0;
     }
 
-    buoy.setMovableObjectLocation(loc);
+    buoyModel.setMovableObjectLocation(loc);
   }
 }

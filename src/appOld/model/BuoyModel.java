@@ -1,5 +1,9 @@
-package app;
+package appOld.model;
 
+import appOld.MovableEllipse;
+import appOld.strategy.MovementStrategy;
+import appOld.strategy.VerticalMovement;
+import appOld.observer.Observer;
 import nicellipse.component.NiSpace;
 import nicellipse.component.NiEllipse;
 
@@ -7,20 +11,19 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static app.constants.SEA_LEVEL;
+import static appOld.Constants.SEA_LEVEL;
 
-public class Buoy extends MovableObject implements Observer {
+public class BuoyModel extends MovableEllipse implements Observer {
   public MovementStrategy movementStrategy;
   private BuoyState state;
-  private boolean isSynchronizing = false; // Variable pour vérifier la synchronisation
-  private long syncStartTime = 0; // Temps de début de la synchronisation
-  private long collectStartTime = 0; // Temps de début de la collecte
-  private int syncStep = 0;  // Variable pour gérer les étapes de synchronisation
+  private boolean isSynchronizing = false;
+  private long syncStartTime = 0;
+  private long collectStartTime;
+  private int syncStep = 0;
 
-  private boolean syncRequested = false; // Indicateur pour une synchro en attente
-  private List<NiEllipse> circles = new ArrayList<>(); // Liste pour stocker les cercles
+  private final List<NiEllipse> circles = new ArrayList<>(); // Liste pour stocker les cercles
 
-  private Satellite satellite;  // Référence au satellite pour obtenir sa position
+  private final Satellite satelliteModel;  // Référence au satellite pour obtenir sa position
 
   public enum BuoyState {
     COLLECTING,
@@ -30,7 +33,7 @@ public class Buoy extends MovableObject implements Observer {
     DIVING
   }
 
-  public Buoy(NiSpace fenetre, int altitude, int startingPosition, int speed, Satellite satellite) {
+  public BuoyModel(NiSpace fenetre, int altitude, int startingPosition, int speed, Satellite satelliteModel) {
     super(fenetre, altitude + SEA_LEVEL, startingPosition, speed);
     if (altitude < 0) {
       throw new IllegalArgumentException("Buoy altitude must be positive");
@@ -38,7 +41,7 @@ public class Buoy extends MovableObject implements Observer {
     if (startingPosition < 0) {
       throw new IllegalArgumentException("Buoy starting position must be positive");
     }
-    this.satellite = satellite;  // Assigner le satellite
+    this.satelliteModel = satelliteModel;  // Assigner le satellite
     this.setBackground(Color.yellow);
     this.setSize(15, 15);
     this.state = BuoyState.COLLECTING;
@@ -70,9 +73,8 @@ public class Buoy extends MovableObject implements Observer {
         break;
 
       case WAITING_FOR_SYNC:
-        // La bouée attend qu'un satellite soit au même X qu'elle
-        if (Math.abs(satellite.getX() - loc.x) < 20) {  // Si proche du satellite en X
-          startSynchronization();  // Commencer la synchronisation
+        if (Math.abs(satelliteModel.getX() - loc.x) < 20) {
+          startSynchronization();
         }
         break;
 
@@ -103,7 +105,7 @@ public class Buoy extends MovableObject implements Observer {
   public void update(String event) {
     if ("SYNCHRONIZING".equals(event)) {
       // Si la synchronisation est demandée, vérifier la position du satellite
-      if (state == BuoyState.WAITING_FOR_SYNC && Math.abs(satellite.getX() - loc.x) < 20) {
+      if (state == BuoyState.WAITING_FOR_SYNC && Math.abs(satelliteModel.getX() - loc.x) < 20) {
         startSynchronization(); // Si déjà à la surface et proche du satellite
       }
     }

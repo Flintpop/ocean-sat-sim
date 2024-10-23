@@ -1,11 +1,14 @@
-package app;
+package appOld.model;
 
+import appOld.MovableEllipse;
+import appOld.observer.Observable;
+import appOld.observer.Observer;
 import nicellipse.component.NiSpace;
 
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Satellite extends MovableObject implements Observable  {
+public class Satellite extends MovableEllipse implements Observable {
   private final ArrayList<Observer> observers = new ArrayList<>();
 
   @Override
