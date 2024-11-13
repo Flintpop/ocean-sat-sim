@@ -21,14 +21,29 @@ public class NiEllipse extends JComponent implements NiBorderedComponent, NiFixe
 	private Ellipse2D ellipse;
 	private boolean fixedToScreen = false;
 	private Point screenPosition;
+	private boolean isMoving = false;
 
-	public NiEllipse() {
-		this.defaultSetup();
-		this.ellipse = new Ellipse2D.Double(0, 0, 5, 5);
-		this.setBounds(this.ellipse.getBounds());
-		this.withBorder = true;
-		this.stroke = this.defaultStroke();
-		this.borderColor = this.defaultBorderColor();
+	@Override
+	public void setLocation(int x, int y) {
+		if (isMoving)
+			return;
+		isMoving = true;
+		super.setLocation(x, y);
+		if (fixedToScreen && isShowing()) {
+			screenPosition = new Point(x, y);
+			SwingUtilities.convertPointToScreen(screenPosition, getParent());
+		}
+		isMoving = false;
+		repaint();
+	}
+
+	@Override
+	public void setLocation(Point p) {
+		setLocation(p.x, p.y);
+	}
+
+	public boolean isMoving() {
+		return isMoving;
 	}
 
 	@Override

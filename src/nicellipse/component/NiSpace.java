@@ -50,16 +50,24 @@ public class NiSpace extends JPanel implements NiBasicComponent {
 		if (frame != null && frame.isVisible()) {
 			Point screenPos = comp.getScreenPosition();
 			if (screenPos != null) {
-				Point windowPoint = new Point(screenPos);
-				SwingUtilities.convertPointFromScreen(windowPoint, this);
+				boolean isMoving = false;
+				// Vérifier le type de composant et son état de mouvement
+				if (comp instanceof NiEllipse) {
+					isMoving = ((NiEllipse) comp).isMoving();
+				}
 
-				Rectangle bounds = getBounds();
-				Rectangle compBounds = new Rectangle(windowPoint.x, windowPoint.y,
-					((Component)comp).getWidth(), ((Component)comp).getHeight());
+				if (!isMoving) {
+					Point windowPoint = new Point(screenPos);
+					SwingUtilities.convertPointFromScreen(windowPoint, this);
 
-				((Component)comp).setVisible(bounds.intersects(compBounds));
-				if (bounds.intersects(compBounds)) {
-					((Component)comp).setLocation(windowPoint.x, windowPoint.y);
+					Rectangle bounds = getBounds();
+					Rectangle compBounds = new Rectangle(windowPoint.x, windowPoint.y,
+						((Component)comp).getWidth(), ((Component)comp).getHeight());
+
+					((Component)comp).setVisible(bounds.intersects(compBounds));
+					if (bounds.intersects(compBounds)) {
+						((Component)comp).setLocation(windowPoint.x, windowPoint.y);
+					}
 				}
 			}
 		}

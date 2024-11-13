@@ -18,10 +18,11 @@ public class BuoyView extends NiEllipse implements PositionListener {
   private BuoyController controller;
 
   public BuoyView(Announcer announcerMovement, int width, int height, Point pos) {
-      this.setSize(width, height);
-      this.setLocation(pos);
-      this.setFixedToScreen(true);
-      announcerMovement.register(this, PositionChangedEvent.class);
+    this.setSize(width, height);
+    this.setLocation(pos);
+    this.setBackground(Color.YELLOW);
+    this.setFixedToScreen(true);
+    announcerMovement.register(this, PositionChangedEvent.class);
   }
 
   @Override

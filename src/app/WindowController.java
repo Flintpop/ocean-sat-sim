@@ -25,10 +25,12 @@ public class WindowController {
   WindowModel windowModel = new WindowModel(WINDOW_WIDTH, WINDOW_HEIGHT);
   WindowView windowView = new WindowView(this);
   SatelliteController satelliteController = SatelliteFactory.createSatellite(5, 40, 240);
+//  SatelliteController satelliteController2 = SatelliteFactory.createSatellite(5, 40, 240);
   BuoyController buoyController = BuoyFactory.createBuoy(1, 200, this.getWindowModel().getSeaLevel() + 100, windowModel, new VerticalMovement(50));
 
   public WindowController() {
     windowView.addToWindow(satelliteController.getSatelliteView());
+//    windowView.addToWindow(satelliteController2.getSatelliteView());
     windowView.addToWindow(buoyController.getBuoyView());
     windowView.addToWindow(windowView.getSky());
 
