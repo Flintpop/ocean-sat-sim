@@ -4,66 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c18d7bc-187f-4552-82d0-d76366d0cf77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/announcer/AbstractEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/announcer/Announcer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/announcer/PositionChangedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/model/WindowModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/state/buoy/DivingState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/state/buoy/RecordingState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/state/buoy/SynchronizingState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/state/buoy/WaitingSynchronizingState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/state/satellite/MovingState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/state/satellite/SatelliteState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/state/satellite/SynchronizingState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/view/WindowView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+    <list default="true" id="8c18d7bc-187f-4552-82d0-d76366d0cf77" name="Changes" comment="feat: Refacto avec states et MVC du window principal.&#10;Observer design pattern WOP">
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ocean-sat-sim.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ocean-sat-sim.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/WindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controller/BuoyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/BuoyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/WindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/WindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/factory/BuoyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/factory/BuoyFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/factory/SatelliteFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/factory/SatelliteFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/BuoyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/BuoyModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/SatelliteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/SatelliteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/AscendingState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/BuoyState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/BuoyState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/RecordingState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/SynchronizingState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/strategy/MovementStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/strategy/buoy/MovementStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/strategy/SinusoidalMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/strategy/buoy/SinusoidalMovement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/strategy/VerticalMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/strategy/buoy/VerticalMovement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/WindowModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/WindowModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/strategy/buoy/VerticalMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/strategy/buoy/VerticalMovement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/view/BuoyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/BuoyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/view/SatelliteView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/SatelliteView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/Constants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/MovableEllipse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/Ocean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/command/AddSatelliteCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/command/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/command/RemoveBuoyCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/controller/SatelliteController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/factory/BuoyFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/factory/SatelliteFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/model/BuoyModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/model/Satellite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/model/SatelliteModel2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/observer/Observable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/observer/Observer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/state/AscendingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/AscendingState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/state/BuoyState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/state/RecordingState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/state/SynchronizingState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/strategy/MovementStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/strategy/SinusoidalMovement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/strategy/VerticalMovement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/view/BuoyView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appOld/view/SatelliteView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/view/WindowView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/WindowView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,27 +52,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.WindowController.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feat/v0.2",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/darwh/OneDrive/UBO_Travail/Semestre_8/Systemes_information/APIIntervenantExterieur",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.WindowController.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/darwh/OneDrive/UBO_Travail/Semestre_8/Systemes_information/APIIntervenantExterieur&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="WindowController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.WindowController" />
@@ -160,10 +111,15 @@
       <updated>1731490158194</updated>
       <workItem from="1731490161078" duration="166000" />
       <workItem from="1731490338441" duration="3864000" />
+      <workItem from="1731502528807" duration="1296000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: Refacto avec states et MVC du window principal.&#10;Observer design pattern WOP" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Refacto avec states et MVC du window principal.&#10;Observer design pattern WOP" />
   </component>
 </project>

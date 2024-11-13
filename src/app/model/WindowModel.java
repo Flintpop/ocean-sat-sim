@@ -10,6 +10,7 @@ import java.awt.*;
 public class WindowModel {
   int width;
   int height;
+  int seaLevel;
 
   int worldWidth;
   int worldHeight;
@@ -20,6 +21,8 @@ public class WindowModel {
 
     this.worldWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
     this.worldHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+
+    this.seaLevel = this.worldHeight / 2;
 
     if (this.width > this.worldWidth || this.height > this.worldHeight) {
       throw new IllegalArgumentException("Window size is too big for the screen : " + this.width + " " + this.height);

@@ -26,7 +26,6 @@ public class VerticalMovement implements MovementStrategy {
       buoyModel.setSpeed(-buoyModel.getSpeed());
     }
 
-    System.out.println("Ma pos : " + loc.y + " Ma vitesse : " + buoyModel.getSpeed());
     // Applique le mouvement vertical
     loc.translate(0, (int) buoyModel.getSpeed());
 

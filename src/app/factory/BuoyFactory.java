@@ -20,11 +20,11 @@ public class BuoyFactory {
    * Crée un satellite avec les paramètres spécifiés.
    */
   public static BuoyController createBuoy(double speed, int x, int y, WindowModel windowModel, MovementStrategy movementStrategy) {
-    Announcer announcer = new Announcer();
-    BuoyModel buoyModel = new BuoyModel(new Point(x, y), speed, windowModel, movementStrategy, announcer);
+    Announcer movementAnnouncer = new Announcer();
+    BuoyModel buoyModel = new BuoyModel(new Point(x, y), speed, windowModel, movementStrategy, movementAnnouncer);
     buoyModel.setState(new RecordingState());
     try {
-      BuoyView buoyView = new BuoyView(buoyModel);
+      BuoyView buoyView = new BuoyView(movementAnnouncer, buoyModel.getWidth(), buoyModel.getHeight(), buoyModel.getPos());
       BuoyController buoyController = new BuoyController(buoyModel, buoyView);
       buoyView.setController(buoyController);
       return buoyController;
