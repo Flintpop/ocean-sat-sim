@@ -1,7 +1,5 @@
 package app;
 
-import java.io.File;
-
 public class Constants {
   public static final int SEA_LEVEL = 200;
   public static final int WINDOW_HEIGHT = 400;

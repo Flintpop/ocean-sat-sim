@@ -17,7 +17,6 @@ public class SatelliteView extends NiEllipse {
 
   /**
    * Constructeur de la vue du satellite.
-   *
    */
   public SatelliteView(SatelliteModel satelliteModel) {
     super();

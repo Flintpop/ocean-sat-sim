@@ -3,6 +3,7 @@ package app.factory;
 
 import app.controller.SatelliteController;
 import app.model.SatelliteModel;
+import app.state.satellite.MovingState;
 import app.view.SatelliteView;
 
 import javax.swing.text.Position;
@@ -18,6 +19,7 @@ public class SatelliteFactory {
    */
   public static SatelliteController createSatellite(double speed, int x, int y) {
     SatelliteModel satelliteModel = new SatelliteModel(new Point(x, y), speed);
+    satelliteModel.setState(new MovingState());
     SatelliteView satelliteView = new SatelliteView(satelliteModel);
 
     SatelliteController satelliteController = new SatelliteController(satelliteModel, satelliteView);

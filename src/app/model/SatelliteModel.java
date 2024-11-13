@@ -1,6 +1,6 @@
 package app.model;
 
-import lombok.AllArgsConstructor;
+import app.state.satellite.SatelliteState;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +14,7 @@ public class SatelliteModel {
   Color color = Color.GRAY;
   int height = 20;
   int width = 20;
+  SatelliteState state;
 
   public SatelliteModel(Point pos, double speed) {
     this.pos = pos;
