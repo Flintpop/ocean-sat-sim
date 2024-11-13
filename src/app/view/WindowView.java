@@ -10,10 +10,6 @@ import nicellipse.component.NiSpace;
 import javax.swing.*;
 import java.awt.*;
 
-import static app.Constants.SEA_LEVEL;
-import static app.Constants.WINDOW_WIDTH;
-import static app.Constants.WORLD_WIDTH;
-
 @Getter
 @Setter
 public class WindowView {
@@ -26,6 +22,7 @@ public class WindowView {
     window.setBackground(Color.blue);
     sky.setBackground(Color.white);
     sky.setSize(controller.getWindowModel().getWorldWidth(), controller.getWindowModel().getSeaLevel());
+    sky.setFixedToScreen(true);
   }
 
   public void addToWindow(Component component) {
@@ -36,6 +33,6 @@ public class WindowView {
     window.openInWindow();
 
     ImageIcon img = new ImageIcon("assets/ocean-sat-sim-logo.png");
-    window.jframe.setIconImage(img.getImage());
+    window.frame.setIconImage(img.getImage());
   }
 }

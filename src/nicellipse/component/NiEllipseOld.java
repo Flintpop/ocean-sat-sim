@@ -1,28 +1,19 @@
 package nicellipse.component;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Point;
-import java.awt.Shape;
-import java.awt.Stroke;
-import java.awt.geom.Ellipse2D;
-import javax.swing.BorderFactory;
-import javax.swing.JComponent;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import javax.swing.border.Border;
+import java.awt.*;
+import java.awt.geom.Ellipse2D;
 
-public class NiEllipse extends JComponent implements NiBorderedComponent, NiFixedComponent {
+public class NiEllipseOld extends JComponent implements NiBorderedComponent {
 	private static final long serialVersionUID = -8346296675140338192L;
-	Color borderColor;
-	Stroke stroke;
-	boolean withBorder;
+	private Color borderColor;
+	private Stroke stroke;
+	private boolean withBorder;
 	private Ellipse2D ellipse;
-	private boolean fixedToScreen = false;
-	private Point screenPosition;
+	private boolean fixedToScreen = false;  // Nouveau champ
 
-	public NiEllipse() {
+	public NiEllipseOld() {
 		this.defaultSetup();
 		this.ellipse = new Ellipse2D.Double(0, 0, 5, 5);
 		this.setBounds(this.ellipse.getBounds());
@@ -31,22 +22,19 @@ public class NiEllipse extends JComponent implements NiBorderedComponent, NiFixe
 		this.borderColor = this.defaultBorderColor();
 	}
 
-	@Override
 	public Border defaultBorder() {
 		return BorderFactory.createEmptyBorder();
 	}
 
-	@Override
 	public void setBounds(int x, int y, int w, int h) {
 		super.setBounds(x, y, w, h);
 		this.ellipse = new Ellipse2D.Double(0, 0, w, h);
 	}
-
+	
 	public Shape getClipShape() {
 		return this.ellipse;
 	}
 
-	@Override
 	public void paint(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g.create();
 		g2d.clip(this.getClipShape());
@@ -54,7 +42,6 @@ public class NiEllipse extends JComponent implements NiBorderedComponent, NiFixe
 		g2d.dispose();
 	}
 
-	@Override
 	public void paintComponent(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g.create();
 		g2d.setColor(this.getBackground());
@@ -88,26 +75,11 @@ public class NiEllipse extends JComponent implements NiBorderedComponent, NiFixe
 		return this.ellipse.contains(p);
 	}
 
-	@Override
-	public boolean isFixedToScreen() {
-		return fixedToScreen;
-	}
-
-	@Override
-	public Point getScreenPosition() {
-		return screenPosition;
-	}
-
-	@Override
-	public void setScreenPosition(Point p) {
-		this.screenPosition = p;
-	}
-
 	public void setFixedToScreen(boolean fixed) {
 		this.fixedToScreen = fixed;
-		if (fixed && isShowing()) {
-			screenPosition = getLocation();
-			SwingUtilities.convertPointToScreen(screenPosition, getParent());
-		}
+	}
+
+	public boolean isFixedToScreen() {
+		return fixedToScreen;
 	}
 }

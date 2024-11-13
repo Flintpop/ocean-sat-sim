@@ -22,6 +22,7 @@ public class SatelliteView extends NiEllipse {
     super();
     this.model = satelliteModel;
     this.setBackground(model.getColor());
+    this.setFixedToScreen(true);
     this.setSize(model.getWidth(), model.getHeight());
     this.setLocation(model.getPos());
   }
