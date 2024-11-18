@@ -13,7 +13,8 @@ public class BuoyController {
   BuoyModel buoyModel;
   BuoyView buoyView;
 
-  public void move() {
-    buoyModel.getMovementStrategy().move(buoyModel);
+  public void update() {
+    buoyModel.update();
+    buoyView.setLocation(buoyModel.getPos());
   }
 }

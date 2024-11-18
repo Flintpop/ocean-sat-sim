@@ -6,10 +6,9 @@ import app.controller.SatelliteController;
 import app.model.SatelliteModel;
 import app.model.WindowModel;
 import app.state.satellite.MovingState;
-import app.strategy.satellite.LeftToRightMovementStrategy;
+import app.strategy.satellite.LeftToRightMovement;
 import app.view.SatelliteView;
 
-import javax.swing.text.Position;
 import java.awt.*;
 
 /**
@@ -23,7 +22,7 @@ public class SatelliteFactory {
   public static SatelliteController createSatellite(double speed, int x, int y, WindowModel windowModel) {
     Announcer movementAnnouncer = new Announcer();
     SatelliteModel satelliteModel = new SatelliteModel(new Point(x, y), speed, windowModel,
-      new LeftToRightMovementStrategy(), movementAnnouncer);
+      new LeftToRightMovement(), movementAnnouncer);
     satelliteModel.setState(new MovingState());
     SatelliteView satelliteView = new SatelliteView(movementAnnouncer, satelliteModel);
 

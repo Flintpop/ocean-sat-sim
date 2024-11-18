@@ -4,21 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c18d7bc-187f-4552-82d0-d76366d0cf77" name="Changes" comment="feat: v0.6-alpha - wip">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/model/ObjectModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/strategy/satellite/LeftToRightMovementStrategy.java" afterDir="false" />
+    <list default="true" id="8c18d7bc-187f-4552-82d0-d76366d0cf77" name="Changes" comment="feat: v0.6-alpha - wip - Movements implémentés">
+      <change afterPath="$PROJECT_DIR$/src/app/strategy/buoy/GoToSurfaceMovement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/strategy/buoy/ReturnToStartMovement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/strategy/buoy/WaitingMovement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/WindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/WindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controller/SatelliteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/SatelliteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/controller/BuoyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/BuoyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/factory/SatelliteFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/factory/SatelliteFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/model/BuoyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/BuoyModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/SatelliteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/SatelliteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/strategy/buoy/HorizontalMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/strategy/buoy/HorizontalMovement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/strategy/buoy/MovementStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/strategy/buoy/MovementStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/strategy/buoy/SinusoidalMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/strategy/buoy/SinusoidalMovement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/strategy/buoy/VerticalMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/strategy/buoy/VerticalMovement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/view/SatelliteView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/SatelliteView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/AscendingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/AscendingState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/DivingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/DivingState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/RecordingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/RecordingState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/SynchronizingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/SynchronizingState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/WaitingSynchronizingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/WaitingSynchronizingState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/strategy/satellite/LeftToRightMovementStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/strategy/satellite/LeftToRightMovement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/view/WindowView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/WindowView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feat/experimental-world-view-feature" />
+        <entry key="$PROJECT_DIR$" value="backup/0.6-wip" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,29 +63,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.WindowController.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/darwh/OneDrive/UBO_Travail/Semestre_8/Systemes_information/APIIntervenantExterieur&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.WindowController.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/darwh/OneDrive/UBO_Travail/Semestre_8/Systemes_information/APIIntervenantExterieur",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
+  <component name="Push.Settings">
+    <force-push-targets>
+      <force-push-target remote-path="origin" branch="main" />
+    </force-push-targets>
+  </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="app.strategy.buoy" />
       <recent name="app.model" />
     </key>
   </component>
@@ -103,6 +112,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WindowController" />
         <item itemvalue="Application.WindowController" />
         <item itemvalue="Application.WindowController" />
       </list>
@@ -144,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731922666205</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: v0.6-alpha - wip - Movements implémentés">
+      <option name="closed" value="true" />
+      <created>1731924343890</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731924343890</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,17 +194,24 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: Refacto avec states et MVC du window principal.&#10;Observer design pattern WOP" />
     <MESSAGE value="feat: v0.6-alpha - wip" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: v0.6-alpha - wip" />
+    <MESSAGE value="feat: v0.6-alpha - wip - Movements implementés" />
+    <MESSAGE value="feat: v0.6-alpha - wip - Movements implémentés" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: v0.6-alpha - wip - Movements implémentés" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/app/WindowController.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/app/strategy/buoy/GoToSurfaceMovement.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="buoyModel.getPos().y &lt;= SEA_LEVEL" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

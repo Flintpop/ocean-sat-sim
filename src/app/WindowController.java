@@ -42,9 +42,9 @@ public class WindowController {
     windowView.addToWindow(windowView.getSky());
 
     Timer timer = new Timer(10, e ->  {
-      buoyController.move();
-      buoyController2.move();
-      buoyController3.move();
+      buoyController.update();
+      buoyController2.update();
+      buoyController3.update();
       satelliteController.move();
     });
     timer.start();

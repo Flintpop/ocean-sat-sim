@@ -5,7 +5,7 @@ import app.strategy.buoy.MovementStrategy;
 
 import java.awt.*;
 
-public class LeftToRightMovementStrategy implements MovementStrategy {
+public class LeftToRightMovement implements MovementStrategy {
   @Override
   public void move(ObjectModel model) {
     Point loc = model.getPos();

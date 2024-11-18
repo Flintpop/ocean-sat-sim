@@ -10,10 +10,6 @@ import nicellipse.component.NiSpace;
 import javax.swing.*;
 import java.awt.*;
 
-import static app.Constants.SEA_LEVEL;
-import static app.Constants.WINDOW_WIDTH;
-import static app.Constants.WORLD_WIDTH;
-
 @Getter
 @Setter
 public class WindowView {
