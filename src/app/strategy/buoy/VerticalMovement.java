@@ -18,8 +18,8 @@ public class VerticalMovement implements MovementStrategy {
     Point loc = buoyModel.getPos();
 
     // Calcul de la position minimale et maximale en fonction de l'amplitude et du niveau de la mer
-    int maxHeight = buoyModel.getRecordingAltitude() + amplitude / 2;
-    int minHeight = buoyModel.getRecordingAltitude() - amplitude / 2;
+    int maxHeight = buoyModel.getSpawningY() + amplitude / 2;
+    int minHeight = buoyModel.getSpawningY() - amplitude / 2;
 
     // Inverse la direction si on dépasse la hauteur maximale ou minimale
     if (loc.y >= maxHeight || loc.y <= minHeight || loc.y <= SEA_LEVEL || loc.y >= (buoyModel.getWindow().getHeight() - buoyModel.getHeight())) {

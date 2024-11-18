@@ -6,6 +6,8 @@ import app.controller.SatelliteController;
 import app.factory.BuoyFactory;
 import app.factory.SatelliteFactory;
 import app.model.WindowModel;
+import app.strategy.buoy.HorizontalMovement;
+import app.strategy.buoy.SinusoidalMovement;
 import app.strategy.buoy.VerticalMovement;
 import app.view.WindowView;
 import lombok.Getter;
@@ -25,14 +27,25 @@ public class WindowController {
   WindowModel windowModel = new WindowModel(WINDOW_WIDTH, WINDOW_HEIGHT);
   WindowView windowView = new WindowView(this);
   SatelliteController satelliteController = SatelliteFactory.createSatellite(5, 40, 240);
-BuoyController buoyController = BuoyFactory.createBuoy(1, 200, this.getWindowModel().getSeaLevel() + 100, windowModel, new VerticalMovement(50));
+  BuoyController buoyController = BuoyFactory.createBuoy(1, 200, this.getWindowModel().getSeaLevel() + 100,
+    windowModel, new VerticalMovement(50));
+  BuoyController buoyController2 = BuoyFactory.createBuoy(1, 250, this.getWindowModel().getSeaLevel() + 100,
+    windowModel, new SinusoidalMovement(50));
+  BuoyController buoyController3 = BuoyFactory.createBuoy(1, 250, this.getWindowModel().getSeaLevel() + 100,
+    windowModel, new HorizontalMovement(50));
 
   public WindowController() {
     windowView.addToWindow(satelliteController.getSatelliteView());
     windowView.addToWindow(buoyController.getBuoyView());
+    windowView.addToWindow(buoyController2.getBuoyView());
+    windowView.addToWindow(buoyController3.getBuoyView());
     windowView.addToWindow(windowView.getSky());
 
-    Timer timer = new Timer(10, e -> buoyController.move());
+    Timer timer = new Timer(10, e ->  {
+      buoyController.move();
+      buoyController2.move();
+      buoyController3.move();
+    });
     timer.start();
     windowView.openInWindow();
   }

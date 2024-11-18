@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c18d7bc-187f-4552-82d0-d76366d0cf77" name="Changes" comment="feat: Refacto avec states et MVC du window principal.&#10;Observer design pattern WOP">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ocean-sat-sim.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ocean-sat-sim.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Constants.java" afterDir="false" />
+    <list default="true" id="8c18d7bc-187f-4552-82d0-d76366d0cf77" name="Changes" comment="feat: v0.6-alpha - wip">
+      <change afterPath="$PROJECT_DIR$/src/app/strategy/buoy/HorizontalMovement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/WindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/WindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/factory/BuoyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/factory/BuoyFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/WindowModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/WindowModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/BuoyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/BuoyModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/strategy/buoy/SinusoidalMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/strategy/buoy/SinusoidalMovement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/strategy/buoy/VerticalMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/strategy/buoy/VerticalMovement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/view/BuoyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/BuoyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/view/WindowView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/WindowView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feat/experimental-world-view-feature" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -90,6 +90,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.WindowController" />
+        <item itemvalue="Application.WindowController" />
       </list>
     </recent_temporary>
   </component>
@@ -113,13 +114,46 @@
       <workItem from="1731490338441" duration="3864000" />
       <workItem from="1731502528807" duration="1296000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: v0.6-alpha - wip">
+      <option name="closed" value="true" />
+      <created>1731922390035</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731922390035</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: Refacto avec states et MVC du window principal.&#10;Observer design pattern WOP" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Refacto avec states et MVC du window principal.&#10;Observer design pattern WOP" />
+    <MESSAGE value="feat: v0.6-alpha - wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: v0.6-alpha - wip" />
   </component>
 </project>

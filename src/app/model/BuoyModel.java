@@ -13,7 +13,8 @@ import java.awt.*;
 @Setter
 public class BuoyModel {
   Point pos;
-  int recordingAltitude;
+  int spawningY;
+  int spawningX;
   double speed;
   Color color = Color.RED;
   int height = 20;
@@ -25,7 +26,8 @@ public class BuoyModel {
 
   public BuoyModel(Point pos, double speed, WindowModel window, MovementStrategy movementStrategy, Announcer announcer) {
     this.pos = pos;
-    this.recordingAltitude = pos.y;
+    this.spawningY = pos.y;
+    this.spawningX = pos.x;
     this.speed = speed;
     this.window = window;
     this.movementStrategy = movementStrategy;
