@@ -1,6 +1,6 @@
 package app.strategy.buoy;
 
-import app.model.BuoyModel;
+import app.model.ObjectModel;
 
 import java.awt.*;
 
@@ -12,7 +12,7 @@ public class HorizontalMovement implements MovementStrategy {
   }
 
   @Override
-  public void move(BuoyModel buoy) {
+  public void move(ObjectModel buoy) {
     Point loc = buoy.getPos();
 
     // Calcul de la position minimale et maximale en fonction de l'amplitude

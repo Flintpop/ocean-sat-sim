@@ -26,7 +26,7 @@ import static app.Constants.WINDOW_WIDTH;
 public class WindowController {
   WindowModel windowModel = new WindowModel(WINDOW_WIDTH, WINDOW_HEIGHT);
   WindowView windowView = new WindowView(this);
-  SatelliteController satelliteController = SatelliteFactory.createSatellite(5, 40, 240);
+  SatelliteController satelliteController = SatelliteFactory.createSatellite(2, 40, 240, windowModel);
   BuoyController buoyController = BuoyFactory.createBuoy(1, 200, this.getWindowModel().getSeaLevel() + 100,
     windowModel, new VerticalMovement(50));
   BuoyController buoyController2 = BuoyFactory.createBuoy(1, 250, this.getWindowModel().getSeaLevel() + 100,
@@ -45,6 +45,7 @@ public class WindowController {
       buoyController.move();
       buoyController2.move();
       buoyController3.move();
+      satelliteController.move();
     });
     timer.start();
     windowView.openInWindow();

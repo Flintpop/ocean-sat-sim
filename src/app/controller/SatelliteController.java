@@ -12,4 +12,8 @@ import lombok.Setter;
 public class SatelliteController {
   SatelliteModel satelliteModel;
   SatelliteView satelliteView;
+
+  public void move() {
+    satelliteModel.getMovementStrategy().move(satelliteModel);
+  }
 }

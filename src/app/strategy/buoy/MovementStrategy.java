@@ -1,7 +1,7 @@
 package app.strategy.buoy;
 
-import app.model.BuoyModel;
+import app.model.ObjectModel;
 
 public interface MovementStrategy {
-  void move(BuoyModel buoyModel);
+  void move(ObjectModel model);
 }

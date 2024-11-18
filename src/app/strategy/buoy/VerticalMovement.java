@@ -1,6 +1,6 @@
 package app.strategy.buoy;
 
-import app.model.BuoyModel;
+import app.model.ObjectModel;
 
 import java.awt.*;
 
@@ -14,21 +14,21 @@ public class VerticalMovement implements MovementStrategy {
   }
 
   @Override
-  public void move(BuoyModel buoyModel) {
-    Point loc = buoyModel.getPos();
+  public void move(ObjectModel model) {
+    Point loc = model.getPos();
 
     // Calcul de la position minimale et maximale en fonction de l'amplitude et du niveau de la mer
-    int maxHeight = buoyModel.getSpawningY() + amplitude / 2;
-    int minHeight = buoyModel.getSpawningY() - amplitude / 2;
+    int maxHeight = model.getSpawningY() + amplitude / 2;
+    int minHeight = model.getSpawningY() - amplitude / 2;
 
     // Inverse la direction si on dépasse la hauteur maximale ou minimale
-    if (loc.y >= maxHeight || loc.y <= minHeight || loc.y <= SEA_LEVEL || loc.y >= (buoyModel.getWindow().getHeight() - buoyModel.getHeight())) {
-      buoyModel.setSpeed(-buoyModel.getSpeed());
+    if (loc.y >= maxHeight || loc.y <= minHeight || loc.y <= SEA_LEVEL || loc.y >= (model.getWindow().getHeight() - model.getHeight())) {
+      model.setSpeed(-model.getSpeed());
     }
 
     // Applique le mouvement vertical
-    loc.translate(0, (int) buoyModel.getSpeed());
+    loc.translate(0, (int) model.getSpeed());
 
-    buoyModel.setPositionAndTranslate(loc);
+    model.setPositionAndTranslate(loc);
   }
 }
