@@ -13,8 +13,8 @@ public class RecordingState implements BuoyState {
   private long duration; // en millisecondes
 //  private static final long MIN_DURATION = 500; // 5 secondes
 //  private static final long MAX_ADDITIONAL_DURATION = 1000; // 5 secondes supplémentaires
-  private static final long MIN_DURATION = 5000; // 5 secondes
-  private static final long MAX_ADDITIONAL_DURATION = 15000; // 5 secondes supplémentaires
+  private static final long MIN_DURATION = 100; // 5 secondes
+  private static final long MAX_ADDITIONAL_DURATION = 500; // 5 secondes supplémentaires
   private Random random = new Random();
 
   @Override

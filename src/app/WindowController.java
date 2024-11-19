@@ -14,6 +14,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.swing.*;
+import java.awt.*;
 
 import static app.Constants.WINDOW_HEIGHT;
 import static app.Constants.WINDOW_WIDTH;
@@ -24,24 +25,58 @@ import static app.Constants.WINDOW_WIDTH;
 @Getter
 @Setter
 public class WindowController {
-  WindowModel windowModel = new WindowModel(WINDOW_WIDTH, WINDOW_HEIGHT);
-  WindowView windowView = new WindowView(this);
-  SatelliteController satelliteController = SatelliteFactory.createSatellite(2, 40, 240, windowModel);
-  BuoyController buoyController = BuoyFactory.createBuoy(1, 200, this.getWindowModel().getSeaLevel() + 100,
-    windowModel, new VerticalMovement(50));
-  BuoyController buoyController2 = BuoyFactory.createBuoy(1, 250, this.getWindowModel().getSeaLevel() + 100,
-    windowModel, new SinusoidalMovement(50));
-  BuoyController buoyController3 = BuoyFactory.createBuoy(1, 250, this.getWindowModel().getSeaLevel() + 100,
-    windowModel, new HorizontalMovement(50));
+  private final WindowView windowView;
+  private final Announcer announcer = new Announcer(); // Announcer central
+  private final WindowModel windowModel = new WindowModel(WINDOW_WIDTH, WINDOW_HEIGHT, announcer);
+
+  // Création des satellites avec le Announcer central
+  private final SatelliteController satelliteController = SatelliteFactory.createSatellite(
+          1,
+          40,
+          240,
+          windowModel,
+          new VerticalMovement(50),
+          announcer
+  );
+
+  // Création des bouées avec le Announcer central
+  private final BuoyController buoyController = BuoyFactory.createBuoy(
+          1,
+          200,
+          Constants.SEA_LEVEL + 100,
+          windowModel,
+          new VerticalMovement(50),
+          announcer
+  );
+  private final BuoyController buoyController2 = BuoyFactory.createBuoy(
+          2,
+          250,
+          Constants.SEA_LEVEL + 100,
+          windowModel,
+          new SinusoidalMovement(50),
+          announcer
+  );
+  private final BuoyController buoyController3 = BuoyFactory.createBuoy(
+          3,
+          300,
+          Constants.SEA_LEVEL + 100,
+          windowModel,
+          new HorizontalMovement(50),
+          announcer
+  );
 
   public WindowController() {
+    // Ajout des vues à la fenêtre
+    this.windowView = new WindowView(this);
     windowView.addToWindow(satelliteController.getSatelliteView());
     windowView.addToWindow(buoyController.getBuoyView());
     windowView.addToWindow(buoyController2.getBuoyView());
     windowView.addToWindow(buoyController3.getBuoyView());
     windowView.addToWindow(windowView.getSky());
+    windowModel.addSatellite(satelliteController.getSatelliteModel());
 
-    Timer timer = new Timer(10, e ->  {
+    // Boucle principale de la simulation
+    Timer timer = new Timer(100, e -> { // Intervalle de 100 ms
       buoyController.update();
       buoyController2.update();
       buoyController3.update();

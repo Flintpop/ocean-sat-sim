@@ -5,22 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c18d7bc-187f-4552-82d0-d76366d0cf77" name="Changes" comment="feat: v0.6-alpha - wip - Movements implémentés">
-      <change afterPath="$PROJECT_DIR$/src/app/strategy/buoy/GoToSurfaceMovement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/strategy/buoy/ReturnToStartMovement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/strategy/buoy/WaitingMovement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/announcer/SatellitePositionEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/announcer/SatellitePositionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/WindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/WindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controller/BuoyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/BuoyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/controller/SatelliteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/SatelliteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/factory/BuoyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/factory/BuoyFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/factory/SatelliteFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/factory/SatelliteFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/BuoyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/BuoyModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/AscendingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/AscendingState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/DivingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/DivingState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/SatelliteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/SatelliteModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/WindowModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/WindowModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/state/buoy/RecordingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/RecordingState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/state/buoy/SynchronizingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/SynchronizingState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/state/buoy/WaitingSynchronizingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/WaitingSynchronizingState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/strategy/satellite/LeftToRightMovementStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/strategy/satellite/LeftToRightMovement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/view/WindowView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/WindowView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/view/SatelliteView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/SatelliteView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -37,7 +36,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="backup/0.6-wip" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,12 +71,13 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/ajout-synchronisation-satellite-bouée",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/darwh/OneDrive/UBO_Travail/Semestre_8/Systemes_information/APIIntervenantExterieur",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -179,7 +179,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="origin/backup/0.6-wip" />
                       </list>
                     </value>
                   </entry>

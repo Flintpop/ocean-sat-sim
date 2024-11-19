@@ -11,6 +11,7 @@ import java.awt.*;
 @Getter
 @Setter
 public class SatelliteModel extends ObjectModel {
+  int id;
   Point pos;
   double speed;
   Color color = Color.GRAY;
@@ -19,8 +20,9 @@ public class SatelliteModel extends ObjectModel {
   SatelliteState state;
   MovementStrategy movementStrategy;
 
-  public SatelliteModel(Point pos, double speed, WindowModel window,
+  public SatelliteModel(int id, Point pos, double speed, WindowModel window,
                         MovementStrategy movementStrategy, Announcer announcerMovement) {
+    this.id = id;
     this.pos = pos;
     this.speed = speed;
     this.window = window;

@@ -34,4 +34,10 @@ public class BuoyFactory {
 
     return null;
   }
+
+  public static BuoyController createBuoy(int id, int x, int y, WindowModel window, MovementStrategy movementStrategy, Announcer announcer) {
+    BuoyModel model = new BuoyModel(new Point(x, y), 10.0, window, movementStrategy, announcer);
+    BuoyView view = new BuoyView(announcer, 20, 20, new Point(x, y));
+    return new BuoyController(model, view);
+  }
 }

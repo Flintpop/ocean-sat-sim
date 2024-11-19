@@ -9,6 +9,8 @@ import lombok.Getter;
 import lombok.Setter;
 import nicellipse.component.NiEllipse;
 
+import java.awt.*;
+
 /**
  * Vue représentant un satellite graphiquement.
  */
@@ -28,6 +30,14 @@ public class SatelliteView extends NiEllipse implements PositionListener {
     this.setSize(model.getWidth(), model.getHeight());
     this.setLocation(model.getPos());
     announcerMovement.register(this, PositionChangedEvent.class);
+  }
+
+  public SatelliteView(SatelliteModel model) {
+    super();
+    this.model = model;
+    this.setBackground(model.getColor());
+    this.setSize(model.getWidth(), model.getHeight());
+    this.setLocation(model.getPos());
   }
 
   @Override

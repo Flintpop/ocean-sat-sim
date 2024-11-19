@@ -18,6 +18,7 @@ public class SynchronizingState implements BuoyState {
     if (elapsed >= SYNCHRONIZING_DURATION) {
       buoyModel.setState(new DivingState());
       buoyModel.setMovementStrategy(new ReturnToStartMovement());
+      startTime = 0;
       System.out.println("Synchronisation terminée. Bouée commence à plonger.");
     }
   }
