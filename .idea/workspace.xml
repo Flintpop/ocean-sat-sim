@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c18d7bc-187f-4552-82d0-d76366d0cf77" name="Changes" comment="feat: Couleurs en sync">
-      <change afterPath="$PROJECT_DIR$/src/app/factory/CirclesFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/view/CircleView.java" afterDir="false" />
+    <list default="true" id="8c18d7bc-187f-4552-82d0-d76366d0cf77" name="Changes" comment="feat: Work in progress de cercles qui s'affichent pas mais ils sont là tkt bro">
+      <change afterPath="$PROJECT_DIR$/src/app/announcer/CirclesListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/announcer/DisplaySyncCircles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/announcer/HideSyncCircles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/WindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/WindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controller/SatelliteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/SatelliteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/state/buoy/DivingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/DivingState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/SynchronizingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/SynchronizingState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/state/satellite/SatelliteSynchronizingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/satellite/SatelliteSynchronizingState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/view/BuoyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/BuoyView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/view/SatelliteView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/SatelliteView.java" afterDir="false" />
     </list>
@@ -177,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732109359727</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: Work in progress de cercles qui s'affichent pas mais ils sont là tkt bro">
+      <option name="closed" value="true" />
+      <created>1732111331014</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732111331014</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +223,8 @@
     <MESSAGE value="feat: v0.6-alpha - wip - Movements implémentés" />
     <MESSAGE value="ontestdes trucs que gpt ma dit" />
     <MESSAGE value="feat: Couleurs en sync" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Couleurs en sync" />
+    <MESSAGE value="feat: Work in progress de cercles qui s'affichent pas mais ils sont là tkt bro" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Work in progress de cercles qui s'affichent pas mais ils sont là tkt bro" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

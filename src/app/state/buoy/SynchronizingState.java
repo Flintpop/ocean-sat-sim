@@ -6,9 +6,10 @@ import app.strategy.buoy.ReturnToStartMovement;
 
 import java.awt.*;
 
+import static app.Constants.SYNCHRONIZATION_DURATION;
+
 public class SynchronizingState implements BuoyState {
   private long startTime;
-  private static final long SYNCHRONIZING_DURATION = 2000; // 2 secondes
 
   @Override
   public void handle(BuoyModel buoyModel) {
@@ -19,7 +20,7 @@ public class SynchronizingState implements BuoyState {
     }
 
     long elapsed = System.currentTimeMillis() - startTime;
-    if (elapsed >= SYNCHRONIZING_DURATION) {
+    if (elapsed >= SYNCHRONIZATION_DURATION) {
       buoyModel.setState(new DivingState());
       buoyModel.setMovementStrategy(new ReturnToStartMovement());
       buoyModel.getAnnouncer().announce(new ColorChangedEvent(buoyModel.getOriginalColor()));

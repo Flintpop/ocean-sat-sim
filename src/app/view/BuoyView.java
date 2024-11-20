@@ -3,6 +3,7 @@ package app.view;
 import app.announcer.Announcer;
 import app.announcer.ColorChangedEvent;
 import app.announcer.ColorListener;
+import app.announcer.DisplaySyncCircles;
 import app.announcer.PositionChangedEvent;
 import app.announcer.PositionListener;
 import app.controller.BuoyController;
@@ -28,6 +29,7 @@ public class BuoyView extends NiEllipse implements PositionListener, ColorListen
     this.setBackground(color);
     announcer.register(this, PositionChangedEvent.class);
     announcer.register(this, ColorChangedEvent.class);
+//    announcer.register(this, DisplaySyncCircles.class);
     circles = CirclesFactory.createCircles();
   }
 
