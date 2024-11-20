@@ -28,6 +28,7 @@ public class WindowController {
   WindowModel windowModel = new WindowModel(WINDOW_WIDTH, WINDOW_HEIGHT);
   WindowView windowView = new WindowView(this);
   SatelliteController satelliteController = SatelliteFactory.createSatellite(2, 40, 240, windowModel);
+  SatelliteController satelliteController2 = SatelliteFactory.createSatellite(3, 40, 250, windowModel);
   BuoyController buoyController = BuoyFactory.createBuoy(1, 200, this.getWindowModel().getSeaLevel() + 100,
     windowModel, new VerticalMovement(50));
   BuoyController buoyController2 = BuoyFactory.createBuoy(1, 250, this.getWindowModel().getSeaLevel() + 100,
@@ -37,7 +38,9 @@ public class WindowController {
 
   public WindowController() {
     windowModel.getSatellites().add(satelliteController.getSatelliteModel());
+    windowModel.getSatellites().add(satelliteController2.getSatelliteModel());
     windowView.addToWindow(satelliteController.getSatelliteView());
+    windowView.addToWindow(satelliteController2.getSatelliteView());
     windowView.addToWindow(buoyController.getBuoyView());
     windowView.addToWindow(buoyController2.getBuoyView());
     windowView.addToWindow(buoyController3.getBuoyView());
@@ -48,6 +51,7 @@ public class WindowController {
       buoyController2.update();
       buoyController3.update();
       satelliteController.move();
+      satelliteController2.move();
     });
     timer.start();
     windowView.openInWindow();

@@ -19,7 +19,7 @@ public class WaitingSynchronizingState implements BuoyState {
 
   private boolean isSatelliteAbove(BuoyModel buoyModel) {
     for (SatelliteModel satelliteModel : buoyModel.getWindow().getSatellites()) {
-      if (satelliteModel.getPos().x == buoyModel.getPos().x) {
+      if (Math.abs(satelliteModel.getPos().x - buoyModel.getPos().x) < 5 ) {
         return true;
       }
     }
