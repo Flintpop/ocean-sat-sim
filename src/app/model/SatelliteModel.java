@@ -1,6 +1,7 @@
 package app.model;
 
 import app.announcer.Announcer;
+import app.state.satellite.MovingState;
 import app.state.satellite.SatelliteState;
 import app.strategy.buoy.MovementStrategy;
 import lombok.Getter;
@@ -11,9 +12,8 @@ import java.awt.*;
 @Getter
 @Setter
 public class SatelliteModel extends ObjectModel {
-  Point pos;
-  double speed;
   Color color = Color.GRAY;
+  Color originalColor = color;
   int height = 20;
   int width = 20;
   SatelliteState state;
@@ -26,5 +26,18 @@ public class SatelliteModel extends ObjectModel {
     this.window = window;
     this.movementStrategy = movementStrategy;
     this.announcer = announcerMovement;
+    this.state = new MovingState();
+  }
+
+  /**
+   * Méthode à appeler régulièrement pour mettre à jour l'état du satellite.
+   */
+  public void update() {
+    if (state != null) {
+      state.handle(this);
+    }
+    if (movementStrategy != null) {
+      movementStrategy.move(this); // Gérer le mouvement de la bouée
+    }
   }
 }

@@ -7,6 +7,7 @@ import app.model.SatelliteModel;
 import app.model.WindowModel;
 import app.state.satellite.MovingState;
 import app.strategy.satellite.LeftToRightMovement;
+import app.view.BuoyView;
 import app.view.SatelliteView;
 
 import java.awt.*;
@@ -24,7 +25,8 @@ public class SatelliteFactory {
     SatelliteModel satelliteModel = new SatelliteModel(new Point(x, y), speed, windowModel,
       new LeftToRightMovement(), movementAnnouncer);
     satelliteModel.setState(new MovingState());
-    SatelliteView satelliteView = new SatelliteView(movementAnnouncer, satelliteModel);
+    SatelliteView satelliteView = new SatelliteView(movementAnnouncer, satelliteModel.getWidth(), satelliteModel.getHeight(),
+      satelliteModel.getPos(), satelliteModel.getColor());
 
     SatelliteController satelliteController = new SatelliteController(satelliteModel, satelliteView);
     satelliteView.setController(satelliteController);

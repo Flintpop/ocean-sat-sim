@@ -2,6 +2,7 @@ package app.state.buoy;
 
 import app.model.BuoyModel;
 import app.model.SatelliteModel;
+import app.state.satellite.SatelliteSynchronizingState;
 
 public class WaitingSynchronizingState implements BuoyState {
   private boolean isSatelliteAbove = false;
@@ -19,7 +20,8 @@ public class WaitingSynchronizingState implements BuoyState {
 
   private boolean isSatelliteAbove(BuoyModel buoyModel) {
     for (SatelliteModel satelliteModel : buoyModel.getWindow().getSatellites()) {
-      if (Math.abs(satelliteModel.getPos().x - buoyModel.getPos().x) < 5 ) {
+      if (Math.abs(satelliteModel.getPos().x - buoyModel.getPos().x) < satelliteModel.getWidth() ) {
+        satelliteModel.setState(new SatelliteSynchronizingState());
         return true;
       }
     }

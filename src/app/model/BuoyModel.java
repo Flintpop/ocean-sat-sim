@@ -13,11 +13,12 @@ import java.awt.*;
 @Setter
 public class BuoyModel extends ObjectModel {
   Color color = Color.RED;
+  Color originalColor = color;
   int height = 20;
   int width = 20;
   BuoyState state;
   MovementStrategy movementStrategy;
-  MovementStrategy originalMovementStrategy; // Pour sauvegarder la stratégie originale
+  MovementStrategy originalMovementStrategy;
 
   public BuoyModel(Point pos, double speed, WindowModel window, MovementStrategy movementStrategy, Announcer announcer) {
     this.pos = pos;
@@ -26,9 +27,9 @@ public class BuoyModel extends ObjectModel {
     this.speed = speed;
     this.window = window;
     this.movementStrategy = movementStrategy;
-    this.originalMovementStrategy = movementStrategy; // Sauvegarder la stratégie originale
+    this.originalMovementStrategy = movementStrategy;
     this.announcer = announcer;
-    this.state = new RecordingState(); // État initial
+    this.state = new RecordingState();
   }
 
   /**

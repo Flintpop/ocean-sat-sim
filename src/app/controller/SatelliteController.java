@@ -13,7 +13,8 @@ public class SatelliteController {
   SatelliteModel satelliteModel;
   SatelliteView satelliteView;
 
-  public void move() {
-    satelliteModel.getMovementStrategy().move(satelliteModel);
+  public void update() {
+    satelliteModel.update();
+    satelliteView.setLocation(satelliteModel.getPos());
   }
 }

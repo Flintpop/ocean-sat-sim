@@ -1,11 +1,9 @@
 package app;
 
-import app.announcer.Announcer;
 import app.controller.BuoyController;
 import app.controller.SatelliteController;
 import app.factory.BuoyFactory;
 import app.factory.SatelliteFactory;
-import app.model.SatelliteModel;
 import app.model.WindowModel;
 import app.strategy.buoy.HorizontalMovement;
 import app.strategy.buoy.SinusoidalMovement;
@@ -27,8 +25,8 @@ import static app.Constants.WINDOW_WIDTH;
 public class WindowController {
   WindowModel windowModel = new WindowModel(WINDOW_WIDTH, WINDOW_HEIGHT);
   WindowView windowView = new WindowView(this);
-  SatelliteController satelliteController = SatelliteFactory.createSatellite(2, 40, 240, windowModel);
-  SatelliteController satelliteController2 = SatelliteFactory.createSatellite(3, 40, 250, windowModel);
+  SatelliteController satelliteController = SatelliteFactory.createSatellite(1, 90, 240, windowModel);
+  SatelliteController satelliteController2 = SatelliteFactory.createSatellite(2, 40, 250, windowModel);
   BuoyController buoyController = BuoyFactory.createBuoy(1, 200, this.getWindowModel().getSeaLevel() + 100,
     windowModel, new VerticalMovement(50));
   BuoyController buoyController2 = BuoyFactory.createBuoy(1, 250, this.getWindowModel().getSeaLevel() + 100,
@@ -50,8 +48,8 @@ public class WindowController {
       buoyController.update();
       buoyController2.update();
       buoyController3.update();
-      satelliteController.move();
-      satelliteController2.move();
+      satelliteController.update();
+      satelliteController2.update();
     });
     timer.start();
     windowView.openInWindow();

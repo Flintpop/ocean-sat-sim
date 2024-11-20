@@ -24,7 +24,8 @@ public class BuoyFactory {
     BuoyModel buoyModel = new BuoyModel(new Point(x, y), speed, windowModel, movementStrategy, movementAnnouncer);
     buoyModel.setState(new RecordingState());
     try {
-      BuoyView buoyView = new BuoyView(movementAnnouncer, buoyModel.getWidth(), buoyModel.getHeight(), buoyModel.getPos());
+      BuoyView buoyView = new BuoyView(movementAnnouncer, buoyModel.getWidth(), buoyModel.getHeight(),
+        buoyModel.getPos(), buoyModel.getColor());
       BuoyController buoyController = new BuoyController(buoyModel, buoyView);
       buoyView.setController(buoyController);
       return buoyController;
