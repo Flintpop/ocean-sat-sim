@@ -14,6 +14,7 @@ public class SatelliteSynchronizingState implements SatelliteState {
     if (startTime == 0) {
       startTime = System.currentTimeMillis();
       satelliteModel.getAnnouncer().announce(new ColorChangedEvent(Color.YELLOW));
+      satelliteModel.getAnnouncer().announce(new ColorChangedEvent(Color.YELLOW));
       System.out.println("Bouée synchronise avec le satellite.");
     }
 

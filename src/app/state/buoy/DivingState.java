@@ -4,7 +4,7 @@ import app.model.BuoyModel;
 
 public class DivingState implements BuoyState {
   private long startTime;
-  private static final long DIVING_DURATION = 2000; // 2 secondes
+  private static final long DIVING_DURATION = 1250; // 2 secondes
 
   @Override
   public void handle(BuoyModel buoyModel) {

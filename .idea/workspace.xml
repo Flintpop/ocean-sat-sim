@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c18d7bc-187f-4552-82d0-d76366d0cf77" name="Changes" comment="feat: v0.6-alpha - wip - Movements implémentés">
-      <change afterPath="$PROJECT_DIR$/src/app/announcer/ColorChangedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/announcer/ColorListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/state/satellite/SatelliteSynchronizingState.java" afterDir="false" />
+    <list default="true" id="8c18d7bc-187f-4552-82d0-d76366d0cf77" name="Changes" comment="feat: Couleurs en sync">
+      <change afterPath="$PROJECT_DIR$/src/app/factory/CirclesFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/view/CircleView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/WindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/WindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/controller/SatelliteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/SatelliteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/factory/BuoyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/factory/BuoyFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/factory/SatelliteFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/factory/SatelliteFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/BuoyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/BuoyModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/SatelliteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/SatelliteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/RecordingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/RecordingState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/SynchronizingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/SynchronizingState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/WaitingSynchronizingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/WaitingSynchronizingState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/satellite/SynchronizingState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/DivingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/DivingState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/view/BuoyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/BuoyView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/view/SatelliteView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/SatelliteView.java" afterDir="false" />
     </list>
@@ -177,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732044674043</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: Couleurs en sync">
+      <option name="closed" value="true" />
+      <created>1732109359727</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732109359727</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +212,8 @@
     <MESSAGE value="feat: v0.6-alpha - wip - Movements implementés" />
     <MESSAGE value="feat: v0.6-alpha - wip - Movements implémentés" />
     <MESSAGE value="ontestdes trucs que gpt ma dit" />
-    <option name="LAST_COMMIT_MESSAGE" value="ontestdes trucs que gpt ma dit" />
+    <MESSAGE value="feat: Couleurs en sync" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Couleurs en sync" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
