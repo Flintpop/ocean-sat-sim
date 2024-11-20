@@ -7,17 +7,18 @@ import java.util.ArrayList;
 public class CirclesFactory {
   public static ArrayList<CircleView> createCircles() {
     ArrayList<CircleView> circles = new ArrayList<>();
-    CircleView circle1 = new CircleView(100, 100, 50);
-    CircleView circle2 = new CircleView(200, 150, 80);
-    CircleView circle3 = new CircleView(300, 200, 110);
+    int number = 12;
+    int baseRadius = 60;
+    int radiusGap = 40;
 
-    circles.add(circle1);
-    circles.add(circle2);
-    circles.add(circle3);
+    for (int i = 0; i < number; i++) {
+      int currentRadius = baseRadius + i * radiusGap;
 
-    circles.forEach(circle -> {
-      circle.setVisible(false);
-    });
+      CircleView circle = new CircleView(currentRadius);
+      circle.setVisible(false);  // Rendre le cercle invisible par défaut
+      circles.add(circle);
+    }
+
     return circles;
   }
 }

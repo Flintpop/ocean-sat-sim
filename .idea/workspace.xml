@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c18d7bc-187f-4552-82d0-d76366d0cf77" name="Changes" comment="feat: Work in progress de cercles qui s'affichent pas mais ils sont là tkt bro">
-      <change afterPath="$PROJECT_DIR$/src/app/announcer/CirclesListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/announcer/DisplaySyncCircles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/announcer/HideSyncCircles.java" afterDir="false" />
+    <list default="true" id="8c18d7bc-187f-4552-82d0-d76366d0cf77" name="Changes" comment="feat: Work in progress de cercles qui s'affichent quand il faut ET il s'enlevent mais que pour sat">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/DivingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/DivingState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/WindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/WindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/controller/BuoyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/BuoyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/factory/CirclesFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/factory/CirclesFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/state/buoy/SynchronizingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/SynchronizingState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/satellite/SatelliteSynchronizingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/satellite/SatelliteSynchronizingState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/WaitingSynchronizingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/WaitingSynchronizingState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/view/BuoyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/BuoyView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/view/CircleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/CircleView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/view/SatelliteView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/SatelliteView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,29 +60,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.WindowController.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/ajout-synchronisation-satellite-bouée&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/darwh/OneDrive/UBO_Travail/Semestre_8/Systemes_information/APIIntervenantExterieur&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.WindowController.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "feature/ajout-synchronisation-satellite-bouée",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/darwh/OneDrive/UBO_Travail/Semestre_8/Systemes_information/APIIntervenantExterieur",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="main" />
@@ -187,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732111331014</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: Work in progress de cercles qui s'affichent quand il faut ET il s'enlevent mais que pour sat">
+      <option name="closed" value="true" />
+      <created>1732112002826</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732112002826</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,18 +231,10 @@
     <MESSAGE value="ontestdes trucs que gpt ma dit" />
     <MESSAGE value="feat: Couleurs en sync" />
     <MESSAGE value="feat: Work in progress de cercles qui s'affichent pas mais ils sont là tkt bro" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Work in progress de cercles qui s'affichent pas mais ils sont là tkt bro" />
+    <MESSAGE value="feat: Work in progress de cercles qui s'affichent quand il faut ET il s'enlevent mais que pour sat" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Work in progress de cercles qui s'affichent quand il faut ET il s'enlevent mais que pour sat" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/app/model/BuoyModel.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="buoyModel.getPos().y &lt;= SEA_LEVEL" language="JAVA" />

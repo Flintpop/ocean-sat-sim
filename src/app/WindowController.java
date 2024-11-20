@@ -44,6 +44,9 @@ public class WindowController {
     windowView.addToWindow(buoyController3.getBuoyView());
     satelliteController.addCirclesToWindow(windowView);
     satelliteController2.addCirclesToWindow(windowView);
+    buoyController.addCirclesToWindow(windowView);
+    buoyController2.addCirclesToWindow(windowView);
+    buoyController3.addCirclesToWindow(windowView);
     windowView.addToWindow(windowView.getSky());
 
     Timer timer = new Timer(10, e ->  {

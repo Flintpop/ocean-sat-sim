@@ -1,6 +1,8 @@
 package app.state.buoy;
 
 import app.announcer.ColorChangedEvent;
+import app.announcer.DisplaySyncCircles;
+import app.announcer.HideSyncCircles;
 import app.model.BuoyModel;
 import app.strategy.buoy.ReturnToStartMovement;
 
@@ -16,6 +18,7 @@ public class SynchronizingState implements BuoyState {
     if (startTime == 0) {
       startTime = System.currentTimeMillis();
       buoyModel.getAnnouncer().announce(new ColorChangedEvent(Color.YELLOW));
+      buoyModel.getAnnouncer().announce(new DisplaySyncCircles());
       System.out.println("Bouée synchronise avec le satellite.");
     }
 
@@ -23,6 +26,7 @@ public class SynchronizingState implements BuoyState {
     if (elapsed >= SYNCHRONIZATION_DURATION) {
       buoyModel.setState(new DivingState());
       buoyModel.setMovementStrategy(new ReturnToStartMovement());
+      buoyModel.getAnnouncer().announce(new HideSyncCircles());
       buoyModel.getAnnouncer().announce(new ColorChangedEvent(buoyModel.getOriginalColor()));
       System.out.println("Synchronisation terminée. Bouée commence à plonger.");
     }

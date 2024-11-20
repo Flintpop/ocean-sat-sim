@@ -2,6 +2,8 @@ package app.controller;
 
 import app.model.BuoyModel;
 import app.view.BuoyView;
+import app.view.CircleView;
+import app.view.WindowView;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,4 +19,11 @@ public class BuoyController {
     buoyModel.update();
     buoyView.setLocation(buoyModel.getPos());
   }
+
+  public void addCirclesToWindow(WindowView windowView) {
+    for (CircleView circle : buoyView.getCircles()) {
+      windowView.addToWindow(circle);
+    }
+  }
+
 }

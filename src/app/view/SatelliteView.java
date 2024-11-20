@@ -46,9 +46,7 @@ public class SatelliteView extends NiEllipse implements PositionListener, ColorL
   @Override
   public void onPositionChanged(double x, double y) {
     this.setLocation((int) x, (int) y);
-    circles.forEach(circleView -> {
-      circleView.updatePosition((int) x, (int) y, this.getWidth(), this.getHeight());
-    });
+    circles.forEach(circleView -> circleView.updatePosition((int) x, (int) y, this.getWidth(), this.getHeight()));
   }
 
   @Override
@@ -58,15 +56,11 @@ public class SatelliteView extends NiEllipse implements PositionListener, ColorL
 
   @Override
   public void onCirclesDisplayed() {
-    this.circles.forEach(circleView -> {
-      circleView.setVisible(true);
-    });
+    this.circles.forEach(circleView -> circleView.setVisible(true));
   }
 
   @Override
   public void onCirclesHidden() {
-    this.circles.forEach(circleView -> {
-      circleView.setVisible(false);
-    });
+    this.circles.forEach(circleView -> circleView.setVisible(false));
   }
 }

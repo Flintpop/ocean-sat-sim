@@ -11,10 +11,9 @@ public class CircleView extends NiEllipse {
   private int radius;
   // Méthode pour obtenir l'instance de NiEllipse
   // Rendre le constructeur public pour permettre l'instanciation
-  public CircleView(int x, int y, int radius) {
+  public CircleView(int radius) {
     this.radius = radius;
     this.setSize(radius, radius);
-    this.setLocation(x - radius / 2, y - radius / 2);  // Centrer le cercle autour de la bouée
     this.setBorderColor(Color.red);  // Couleur de la bordure du cercle
     this.setStrokeWidth(2);
     this.setWithBorder(true);
