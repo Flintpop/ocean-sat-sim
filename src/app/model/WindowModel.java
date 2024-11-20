@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 @Getter
 @Setter
@@ -11,11 +12,12 @@ public class WindowModel {
   int width;
   int height;
   int seaLevel;
-
+  ArrayList<SatelliteModel> satellites;
   int worldWidth;
   int worldHeight;
 
   public WindowModel(int width, int height) {
+    satellites = new ArrayList<>();
     this.width = width;
     this.height = height;
 

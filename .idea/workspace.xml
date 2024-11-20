@@ -5,22 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c18d7bc-187f-4552-82d0-d76366d0cf77" name="Changes" comment="feat: v0.6-alpha - wip - Movements implémentés">
-      <change afterPath="$PROJECT_DIR$/src/app/strategy/buoy/GoToSurfaceMovement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/strategy/buoy/ReturnToStartMovement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/strategy/buoy/WaitingMovement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/WindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/WindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controller/BuoyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/BuoyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/factory/SatelliteFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/factory/SatelliteFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/BuoyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/BuoyModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/AscendingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/AscendingState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/DivingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/DivingState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/RecordingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/RecordingState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/state/buoy/SynchronizingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/SynchronizingState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/WindowModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/WindowModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/state/buoy/WaitingSynchronizingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/state/buoy/WaitingSynchronizingState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/strategy/satellite/LeftToRightMovementStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/strategy/satellite/LeftToRightMovement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/view/WindowView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/view/WindowView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,12 +60,13 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/ajout-synchronisation-satellite-bouée",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/darwh/OneDrive/UBO_Travail/Semestre_8/Systemes_information/APIIntervenantExterieur",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -112,6 +101,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WindowController" />
         <item itemvalue="Application.WindowController" />
         <item itemvalue="Application.WindowController" />
         <item itemvalue="Application.WindowController" />
@@ -162,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731924343890</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ontestdes trucs que gpt ma dit">
+      <option name="closed" value="true" />
+      <created>1732044674043</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732044674043</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +194,8 @@
     <MESSAGE value="feat: v0.6-alpha - wip" />
     <MESSAGE value="feat: v0.6-alpha - wip - Movements implementés" />
     <MESSAGE value="feat: v0.6-alpha - wip - Movements implémentés" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: v0.6-alpha - wip - Movements implémentés" />
+    <MESSAGE value="ontestdes trucs que gpt ma dit" />
+    <option name="LAST_COMMIT_MESSAGE" value="ontestdes trucs que gpt ma dit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

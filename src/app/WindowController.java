@@ -5,6 +5,7 @@ import app.controller.BuoyController;
 import app.controller.SatelliteController;
 import app.factory.BuoyFactory;
 import app.factory.SatelliteFactory;
+import app.model.SatelliteModel;
 import app.model.WindowModel;
 import app.strategy.buoy.HorizontalMovement;
 import app.strategy.buoy.SinusoidalMovement;
@@ -35,6 +36,7 @@ public class WindowController {
     windowModel, new HorizontalMovement(50));
 
   public WindowController() {
+    windowModel.getSatellites().add(satelliteController.getSatelliteModel());
     windowView.addToWindow(satelliteController.getSatelliteView());
     windowView.addToWindow(buoyController.getBuoyView());
     windowView.addToWindow(buoyController2.getBuoyView());

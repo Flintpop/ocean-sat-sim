@@ -1,27 +1,29 @@
 package app.state.buoy;
 
 import app.model.BuoyModel;
-import app.strategy.buoy.ReturnToStartMovement;
-import app.strategy.buoy.WaitingMovement;
+import app.model.SatelliteModel;
 
 public class WaitingSynchronizingState implements BuoyState {
-  private boolean satelliteAbove = false;
+  private boolean isSatelliteAbove = false;
 
   @Override
   public void handle(BuoyModel buoyModel) {
     // Vérifiez si un satellite est au-dessus (logique à implémenter)
-    satelliteAbove = checkSatellitePosition(buoyModel);
+    isSatelliteAbove = isSatelliteAbove(buoyModel);
 
-    if (satelliteAbove) {
+    if (isSatelliteAbove) {
       buoyModel.setState(new SynchronizingState());
       System.out.println("Satellite détecté. Début de la synchronisation.");
     }
   }
 
-  private boolean checkSatellitePosition(BuoyModel buoyModel) {
-    // Implémentez la logique pour vérifier si un satellite est au-dessus
-    // Par exemple, comparer les coordonnées x
-    // Retourne true si un satellite est détecté
-    return true; // Placeholder
+  private boolean isSatelliteAbove(BuoyModel buoyModel) {
+    for (SatelliteModel satelliteModel : buoyModel.getWindow().getSatellites()) {
+      if (satelliteModel.getPos().x == buoyModel.getPos().x) {
+        return true;
+      }
+    }
+    return false;
   }
+
 }
